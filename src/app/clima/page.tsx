@@ -1,10 +1,7 @@
 "use client"
-// pages/index.js
-
 import React, { useState } from 'react';
 
 const WeatherForecast = () => {
-    // const [location, setLocation] = useState('');
     const [location, setLocation] = useState([]);
     const [forecast, setForecast] = useState([]);
 
@@ -21,7 +18,6 @@ const WeatherForecast = () => {
             const response = await fetch(apiUrl);
             const data = await response.json();
             setForecast(data.forecast.forecastday);
-            // setLocation(data.location.lat);
         } catch (error) {
             console.error('Error fetching weather data:', error);
         }
@@ -45,10 +41,7 @@ const WeatherForecast = () => {
                         <p>Fecha: {day.date}</p>
                         <p>Temperatura Máxima: {day.day.maxtemp_c}°C</p>
                         <p>Temperatura Mínima: {day.day.mintemp_c}°C</p>
-                        {/* <p>Latitud: {forecast.length > 0 && forecast[0].location && forecast[0].location.lat}</p> */}
-
                     </li>
-
                 ))}
 
             </ul>
